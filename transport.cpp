@@ -1,11 +1,12 @@
 #include "transport.h"
 #include "planes.h"
 #include "train.h"
+#include "ship.h"
 
 transport* transport::read_transport(std::ifstream &stream) {
     int type;
     stream >> type;
-    if(type < 1 || type > 2) {
+    if(type < 1 || type > 3) {
         std::cout << "Input error." << std::endl;
         return nullptr;
     }
@@ -20,6 +21,11 @@ transport* transport::read_transport(std::ifstream &stream) {
             temp_t = new train{};
             temp_t->read(stream);
             temp_t->tr_type = T_type::TRAIN;
+            break;
+        case T_type::SHIP:
+            temp_t = new ship{};
+            temp_t->read(stream);
+            temp_t->tr_type = T_type::SHIP;
             break;
         default:
             return nullptr;

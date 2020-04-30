@@ -7,7 +7,8 @@
 
 enum T_type {
     PLANES=1,
-    TRAIN=2
+    TRAIN=2,
+    SHIP=3
 };
 
 class transport {
