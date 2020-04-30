@@ -28,10 +28,12 @@ transport* transport::read_transport(std::ifstream &stream) {
     else delete temp_t;
     if(!stream.eof()) stream >> temp_t->distance;
     else delete temp_t;
+    if(!stream.eof()) stream >> temp_t->mass;
+    else delete temp_t;
     return temp_t;
 }
 
 void transport::out_transport(std::ofstream &stream) {
-    stream << "Speed: " << speed << "; Distance: " << distance << "; Type: ";
+    stream << "Speed: " << speed << "; Distance: " << distance << "; Mass: " << mass << "; Type: ";
     out(stream);
 }
