@@ -32,6 +32,10 @@ transport* transport::read_transport(std::ifstream &stream) {
 }
 
 void transport::out_transport(std::ofstream &stream) {
-    stream << "Speed: " << speed << "; Distance: " << distance << "; Type: ";
+    stream << "Speed: " << speed << "; Distance: " << distance << "; Estimate time: " << estimate_time() << "; Type: ";
     out(stream);
+}
+
+double transport::estimate_time() {
+    return distance/speed;
 }
