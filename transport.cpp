@@ -39,3 +39,7 @@ void transport::out_transport(std::ofstream &stream) {
 double transport::estimate_time() {
     return distance/speed;
 }
+
+bool transport::comparator(transport *el1, transport *el2) {
+    return el1->estimate_time() < el2->estimate_time();
+}

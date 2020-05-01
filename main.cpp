@@ -20,6 +20,9 @@ int main(int argc, char* argv[]) {
     container c{};
     c.read_container(ifst);
     c.out_container(ofst);
+    ofst << "Sorted container" << std::endl;
+    c.sort();
+    c.out_container(ofst);
     c.containerClear();
     cout << "END"<< endl;
     return 0;

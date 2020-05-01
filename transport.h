@@ -22,6 +22,7 @@ public:
     static transport* read_transport(std::ifstream&stream);
     void out_transport(std::ofstream& stream);
     double estimate_time();
+    static bool comparator(transport*el1, transport*el2);
 private:
 };
 

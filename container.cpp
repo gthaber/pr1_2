@@ -46,3 +46,19 @@ void container::out_container(std::ofstream &stream) {
     }
 }
 
+void container::sort() {
+    element *el1 = starting;
+    element *el2 = starting;
+    for (int i = 0; i < size-1; i++) {
+        el2 = el1->forward;
+        for (int j = 0; j < size-1-i; j++) {
+            if(transport::comparator(el1->t, el2->t)) {
+                transport *el_temp = el1->t;
+                el1->t = el2->t;
+                el2->t = el_temp;
+            }
+            el2 = el2->forward;
+        }
+        el1 = el1->forward;
+    }
+}

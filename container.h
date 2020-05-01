@@ -20,6 +20,7 @@ public:
     void containerAdd(element*);
     void read_container(std::ifstream& stream);
     void out_container(std::ofstream& stream);
+    void sort();
     element* starting;
     element* ending;
     int size;
