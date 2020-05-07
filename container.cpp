@@ -63,13 +63,16 @@ void container::sort() {
     }
 }
 
-void container::out_container(std::ofstream &stream, T_type typ) {
+int container::out_container(std::ofstream &stream, T_type typ) {
     element *el = starting;
+    int count1 = 0;
     for(int i = 0; i < size; i++) {
         if(typ != el->t->tr_type) {
             stream << i + 1 << ". ";
+            count1++;
             el->t->out_transport(stream);
         }
         el = el ->forward;
     }
+    return count1;
 }
