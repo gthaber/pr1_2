@@ -32,10 +32,18 @@ transport* transport::read_transport(std::ifstream &stream) {
     }
     if(!stream.eof()) stream >> temp_t->speed;
     else delete temp_t;
+    if(temp_t->speed <= 0) {
+        delete temp_t;
+        return nullptr;
+    }
     if(!stream.eof()) stream >> temp_t->distance;
     else delete temp_t;
     if(!stream.eof()) stream >> temp_t->mass;
     else delete temp_t;
+    if(temp_t->mass <= 0) {
+        delete temp_t;
+        return nullptr;
+    }
     return temp_t;
 }
 

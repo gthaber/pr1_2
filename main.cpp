@@ -5,7 +5,7 @@
 // Обобщение, построенное на основе непосредственного включения специализаций.
 #include <gtest/gtest.h>
 #include "container.h"
-const bool Testing = true;
+const bool Testing = false;
 using namespace std;
 int RunTests() {
     testing::InitGoogleTest();
@@ -24,6 +24,10 @@ int main(int argc, char* argv[]) {
     }
     ifstream ifst(argv[1]);
     ofstream ofst(argv[2]);
+    if(!ifst.is_open()) {
+        std::cout << "I/O File is missing.\n";
+        return 1;
+    }
     cout << "START"<< endl;
     container c{};
     c.read_container(ifst);
