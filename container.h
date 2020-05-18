@@ -18,10 +18,10 @@ public:
     container();
     void containerClear();
     void containerAdd(element*);
-    void read_container(std::ifstream& stream);
-    void out_container(std::ofstream& stream);
+    void readContainer(std::ifstream& stream);
+    void outContainer(std::ofstream& stream);
     void sort();
-    int out_container(std::ofstream& stream, T_type typ);
+    int outContainer(std::ofstream& stream, t_type typ);
     element* starting;
     element* ending;
     int size;

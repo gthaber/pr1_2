@@ -1,9 +1,9 @@
 
 #include "container.h"
 
-void container::read_container(std::ifstream &stream) {
+void container::readContainer(std::ifstream &stream) {
     while(!stream.eof()) {
-        transport *temp_tr = transport::read_transport(stream);
+        transport *temp_tr = transport::readTransport(stream);
         if (temp_tr == nullptr) return; // Если не считалось, то ошибка
         element *el = new element{};
         el->t = temp_tr;
@@ -37,11 +37,11 @@ void container::containerClear() {
     }
 }
 
-void container::out_container(std::ofstream &stream) {
+void container::outContainer(std::ofstream &stream) {
     element *el = starting;
     for(int i = 0; i < size; i++) {
         stream << i+1 << ". ";
-        el->t->out_transport(stream);
+        el->t->outTransport(stream);
         el = el ->forward;
     }
 }
@@ -63,14 +63,14 @@ void container::sort() {
     }
 }
 
-int container::out_container(std::ofstream &stream, T_type typ) {
+int container::outContainer(std::ofstream &stream, t_type typ) {
     element *el = starting;
     int count1 = 0;
     for(int i = 0; i < size; i++) {
         if(typ != el->t->tr_type) {
             stream << i + 1 << ". ";
             count1++;
-            el->t->out_transport(stream);
+            el->t->outTransport(stream);
         }
         el = el ->forward;
     }

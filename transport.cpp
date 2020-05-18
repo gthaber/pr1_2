@@ -3,7 +3,7 @@
 #include "train.h"
 #include "ship.h"
 
-transport* transport::read_transport(std::ifstream &stream) {
+transport* transport::readTransport(std::ifstream &stream) {
     int type;
     stream >> type;
     if(type < 1 || type > 3) {
@@ -12,20 +12,20 @@ transport* transport::read_transport(std::ifstream &stream) {
     }
     transport *temp_t;
     switch (type) {
-        case T_type::PLANES:
+        case t_type::PLANES:
             temp_t = new planes{};
             temp_t->read(stream);
-            temp_t->tr_type = T_type::PLANES;
+            temp_t->tr_type = t_type::PLANES;
             break;
-        case T_type::TRAIN:
+        case t_type::TRAIN:
             temp_t = new train{};
             temp_t->read(stream);
-            temp_t->tr_type = T_type::TRAIN;
+            temp_t->tr_type = t_type::TRAIN;
             break;
-        case T_type::SHIP:
+        case t_type::SHIP:
             temp_t = new ship{};
             temp_t->read(stream);
-            temp_t->tr_type = T_type::SHIP;
+            temp_t->tr_type = t_type::SHIP;
             break;
         default:
             return nullptr;
@@ -47,16 +47,16 @@ transport* transport::read_transport(std::ifstream &stream) {
     return temp_t;
 }
 
-void transport::out_transport(std::ofstream &stream) {
-    stream << "Speed: " << speed << "; Distance: " << distance << "; Estimate time: " << estimate_time()
+void transport::outTransport(std::ofstream &stream) {
+    stream << "Speed: " << speed << "; Distance: " << distance << "; Estimate time: " << estimateTime()
     << "; Mass: " << mass << "; Type: ";
     out(stream);
 }
 
-double transport::estimate_time() {
+double transport::estimateTime() {
     return distance/speed;
 }
 
 bool transport::comparator(transport *el1, transport *el2) {
-    return el1->estimate_time() < el2->estimate_time();
+    return el1->estimateTime() < el2->estimateTime();
 }

@@ -8,17 +8,17 @@ bool ship::read(std::ifstream &stream) {
     if(!stream.eof()) {
         int typ;
         stream >> typ;
-        ship_type = (Ship_Type) typ;
+        ship_type = (ship_type) typ;
     }
     else return false;
     return true;
 }
 
 void ship::out(std::ofstream &stream) {
-    stream << "Ships; Displacement: " << displacement << "; Ship type: " << ship::type_to_str(ship_type) << ";" << std::endl;
+    stream << "Ships; Displacement: " << displacement << "; Ship type: " << ship::typeToStr(ship_type) << ";" << std::endl;
 }
 
-std::string ship::type_to_str(Ship_Type t) {
+std::string ship::typeToStr(ship_type t) {
     switch(t) {
         case 1:
             return "Liner";

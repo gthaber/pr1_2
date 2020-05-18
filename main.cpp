@@ -30,15 +30,15 @@ int main(int argc, char* argv[]) {
     }
     cout << "START"<< endl;
     container c{};
-    c.read_container(ifst);
-    c.out_container(ofst);
+    c.readContainer(ifst);
+    c.outContainer(ofst);
     ofst << "Sorted container" << std::endl;
     c.sort();
-    c.out_container(ofst);
+    c.outContainer(ofst);
     ofst << "Ignoring type 1:" << std::endl;
-    c.out_container(ofst, T_type::PLANES);
+    c.outContainer(ofst, t_type::PLANES);
     ofst << "Ignoring type 2:" << std::endl;
-    c.out_container(ofst, T_type::TRAIN);
+    c.outContainer(ofst, t_type::TRAIN);
     c.containerClear();
     cout << "END"<< endl;
     return 0;
