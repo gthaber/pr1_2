@@ -35,10 +35,7 @@ int main(int argc, char* argv[]) {
     ofst << "Sorted container" << std::endl;
     c.sort();
     c.outContainer(ofst);
-    ofst << "Ignoring type 1:" << std::endl;
-    c.outContainer(ofst, t_type::PLANES);
-    ofst << "Ignoring type 2:" << std::endl;
-    c.outContainer(ofst, t_type::TRAIN);
+    c.multi(ofst);
     c.containerClear();
     cout << "END"<< endl;
     return 0;

@@ -16,6 +16,7 @@ private:
 class container {
 public:
     container();
+    void multi(std::ofstream &ofst);
     void containerClear();
     void containerAdd(element*);
     void readContainer(std::ifstream& stream);

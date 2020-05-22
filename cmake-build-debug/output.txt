@@ -1,3 +1,46 @@
 1. Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+2. Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
 3. Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;
 4. Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+Sorted container
+1. Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+2. Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+3. Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;
+4. Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
+_.-._.-._.-._.-MULTIMETHOD-._.-._.-._.-._
+| planes + ship |
+Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+| planes + ship |
+Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;
+| train + ship |
+Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
+| ship + planes |
+Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+| planes + planes |
+Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;
+| train + planes |
+Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
+| ship + planes |
+Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;
+Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+| planes + planes |
+Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;
+Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+| train + planes |
+Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;
+Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
+| ship + train |
+Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
+Speed: 5; Distance: 505; Estimate time: 101; Mass: 4.123; Type: Ships; Displacement: 23; Ship type: Tug;
+| planes + train |
+Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
+Speed: 150; Distance: 1000; Estimate time: 6; Mass: 0.5; Type: Planes; Range: 400; Carry: 1225;
+| planes + train |
+Speed: 800; Distance: 8; Estimate time: 0; Mass: 15.5; Type: Train; Length: 120;
+Speed: 1; Distance: 1; Estimate time: 1; Mass: 444.5; Type: Planes; Range: 1; Carry: 21;

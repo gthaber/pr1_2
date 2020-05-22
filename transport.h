@@ -21,6 +21,10 @@ public:
     virtual bool read(std::ifstream& stream) = 0;
     virtual void out(std::ofstream& stream) = 0;
 
+    virtual void multi(transport* other, std::ofstream& stream) = 0;
+    virtual void shipMulti(std::ofstream& stream) = 0;
+    virtual void planesMulti(std::ofstream& stream) = 0;
+    virtual void trainMulti(std::ofstream& stream) = 0;
     static transport* readTransport(std::ifstream&stream);
     void outTransport(std::ofstream& stream);
     double estimateTime();

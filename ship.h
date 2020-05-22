@@ -7,7 +7,7 @@
 #include <string>
 #include "transport.h"
 
-enum ship_type {
+enum ship_type_ {
     LINER = 1,
     TUG = 2,
     TANKER = 3
@@ -15,9 +15,13 @@ enum ship_type {
 
 class ship : public transport {
 public:
-    static std::string typeToStr(ship_type t);
+    static std::string typeToStr(ship_type_ t);
     int displacement;
-    ship_type ship_type;
+    ship_type_ ship_type;
+    void multi(transport* other, std::ofstream& stream) override;
+    void shipMulti(std::ofstream& stream) override;
+    void planesMulti(std::ofstream& stream) override;
+    void trainMulti(std::ofstream& stream) override;
     bool read(std::ifstream& stream);
     void out(std::ofstream& stream);
 private:

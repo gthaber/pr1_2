@@ -14,17 +14,17 @@ transport* transport::readTransport(std::ifstream &stream) {
     switch (type) {
         case t_type::PLANES:
             temp_t = new planes{};
-            temp_t->read(stream);
+            if(!temp_t->read(stream)) return nullptr;
             temp_t->tr_type = t_type::PLANES;
             break;
         case t_type::TRAIN:
             temp_t = new train{};
-            temp_t->read(stream);
+            if(!temp_t->read(stream)) return nullptr;
             temp_t->tr_type = t_type::TRAIN;
             break;
         case t_type::SHIP:
             temp_t = new ship{};
-            temp_t->read(stream);
+            if(!temp_t->read(stream)) return nullptr;
             temp_t->tr_type = t_type::SHIP;
             break;
         default:
@@ -41,7 +41,6 @@ transport* transport::readTransport(std::ifstream &stream) {
     if(!stream.eof()) stream >> temp_t->mass;
     else delete temp_t;
     if(temp_t->mass <= 0) {
-        delete temp_t;
         return nullptr;
     }
     return temp_t;
