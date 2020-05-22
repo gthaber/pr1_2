@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     container c{};
     c.read_container(ifst);
     c.out_container(ofst);
+    c.multi(ofst);
     c.containerClear();
     cout << "END"<< endl;
     return 0;

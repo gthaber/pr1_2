@@ -10,6 +10,9 @@ class planes : public transport {
 public:
     int range;
     int carry;
+    void multi(transport* other, std::ofstream& stream) override;
+    void planesMulti(std::ofstream& stream) override;
+    void trainMulti(std::ofstream& stream) override;
     bool read(std::ifstream& stream);
     void out(std::ofstream& stream);
 private:

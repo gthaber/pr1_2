@@ -18,6 +18,7 @@ public:
     container();
     void containerClear();
     void containerAdd(element*);
+    void multi(std::ofstream &ofst);
     void read_container(std::ifstream& stream);
     void out_container(std::ofstream& stream);
     element* starting;

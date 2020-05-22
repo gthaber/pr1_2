@@ -46,3 +46,23 @@ void container::out_container(std::ofstream &stream) {
     }
 }
 
+void container::multi(std::ofstream &ofst) {
+    ofst << "_.-._.-._.-._.-MULTIMETHOD-._.-._.-._.-._" << std::endl;
+    element *el1 = starting;
+    int count1 = 0;
+    for(int i = 0; i < size; i++) {
+        element *el2 = starting;
+        for(int j = 0; j < size; j++) {
+            if(i == j) {
+                el2 = el2->forward;
+                continue;
+            }
+            el1->t->multi(el2->t, ofst);
+            el1->t->out_transport(ofst);
+            el2->t->out_transport(ofst);
+            el2 = el2->forward;
+        }
+        el1 = el1->forward;
+    }
+}
+

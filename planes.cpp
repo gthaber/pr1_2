@@ -14,3 +14,15 @@ bool planes::read(std::ifstream &stream) {
 void planes::out(std::ofstream &stream) {
     stream << "Planes; Range: " << range << "; Carry: " << carry << ";" << std::endl;
 }
+
+void planes::multi(transport *other, std::ofstream &stream) {
+    other->planesMulti(stream);
+}
+
+void planes::planesMulti(std::ofstream &stream) {
+    stream << "| planes + planes |" << std::endl;
+}
+
+void planes::trainMulti(std::ofstream &stream) {
+    stream << "| planes + train |" << std::endl;
+}

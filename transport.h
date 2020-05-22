@@ -18,7 +18,9 @@ public:
 
     virtual bool read(std::ifstream& stream) = 0;
     virtual void out(std::ofstream& stream) = 0;
-
+    virtual void multi(transport* other, std::ofstream& stream) = 0;
+    virtual void planesMulti(std::ofstream& stream) = 0;
+    virtual void trainMulti(std::ofstream& stream) = 0;
     static transport* read_transport(std::ifstream&stream);
     void out_transport(std::ofstream& stream);
 private:
